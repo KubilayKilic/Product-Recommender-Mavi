@@ -145,7 +145,7 @@
                 resolve(data);
               } else {
                 reject(
-                  new Error("Product datasını alma işlemi başarısız oldu.")
+                  new Error("Product datası başarılı bir şekilde fetch edildi.")
                 );
               }
             }
@@ -154,7 +154,9 @@
           xhr.send();
         });
       } else {
-        console.error("Yanlış sayfa!");
+        console.error(
+          "Yanlış sayfa olduğu için fetch işlemi başarısız. Lütfen ilgili sayfada kodu çalıştırmayı deneyin."
+        );
         return Promise.resolve();
       }
     }
