@@ -2,7 +2,6 @@
   self.init = () => {
     self.buildCSS();
     self.setEvents();
-    //return true;
   };
 
   self.buildCSS = () => {
@@ -127,54 +126,53 @@
 
   self.setEvents = () => {
     async function getProductData() {
-      const currentUrl = this.window.location.href;
-      //this.window.location.href buradaki this ve window ne iş CHATGPT
-      const targetUrl = "https://www.mavi.com//";
+      const xhr = new XMLHttpRequest();
+      const url =
+        "https://gist.githubusercontent.com/KubilayKilic/00567e2da1f8f9261b007a7eb0f66b4d/raw/df8856929db9b2e39fa0a22df6cea740618fd123/mavi_recommender_data.json";
 
-      if (currentUrl.startsWith(targetUrl)) {
-        const xhr = new XMLHttpRequest();
-        const url =
-          "https://gist.githubusercontent.com/KubilayKilic/00567e2da1f8f9261b007a7eb0f66b4d/raw/df8856929db9b2e39fa0a22df6cea740618fd123/mavi_recommender_data.json";
-
-        return new Promise((resolve, reject) => {
-          // PROMİSE NEDİR CHATGPT
-          xhr.onreadystatechange = function () {
-            if (xhr.readyState === XMLHttpRequest.DONE) {
-              if (xhr.status === 200) {
-                const data = JSON.parse(xhr.responseText);
-                resolve(data);
-              } else {
-                reject(
-                  new Error("Product datası başarılı bir şekilde fetch edildi.")
-                );
-              }
+      return new Promise((resolve, reject) => {
+        xhr.onreadystatechange = function () {
+          if (xhr.readyState === XMLHttpRequest.DONE) {
+            if (xhr.status === 200) {
+              const data = JSON.parse(xhr.responseText);
+              resolve(data);
+            } else {
+              reject(
+                new Error("Product datası fetch edilirken bir hata oluştu.")
+              );
             }
-          };
-          xhr.open("GET", url);
-          xhr.send();
-        });
-      } else {
-        console.error(
-          "Yanlış sayfa olduğu için fetch işlemi başarısız. Lütfen ilgili sayfada kodu çalıştırmayı deneyin."
-        );
-        return Promise.resolve();
-      }
+          }
+        };
+        xhr.open("GET", url);
+        xhr.send();
+      });
     }
 
     const productData = localStorage.getItem("productData");
 
-    if (JSON.parse(productData)) {
-      self.buildHTML(JSON.parse(productData));
-      self.likeProduct();
+    if (productData) {
+      try {
+        const parsedData = JSON.parse(productData);
+        self.buildHTML(parsedData);
+        self.likeProduct();
+      } catch (e) {
+        console.warn(
+          "localStorage'daki veri parse edilemedi, yeniden fetch ediliyor."
+        );
+        fetchAndUseProductData();
+      }
     } else {
+      fetchAndUseProductData();
+    }
+
+    function fetchAndUseProductData() {
       getProductData()
         .then((data) => {
           localStorage.setItem("productData", JSON.stringify(data));
           self.buildHTML(data);
-          self.likeProduct();
         })
         .catch((err) => {
-          console.error(err);
+          console.error("Veri çekilemedi:", err);
         });
     }
   };
