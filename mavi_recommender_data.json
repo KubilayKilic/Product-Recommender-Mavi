@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "name": "Kimberly 90lar Antrasit Jean Pantolon",
+    "url": "https://www.mavi.com/kimberly-90lar-antrasit-jean-pantolon/p/1010626-88602?#ins_sr=eyJwcm9kdWN0SWQiOiIxMDEwNjI2LTg4NjAyIn0=",
+    "img": "https://sky-static.mavi.com/mnresize/820/1162/1010626-88602_image_1.jpg",
+    "price": 1399.99
+  },
+  {
+    "id": 2,
+    "name": "Miami Iconic Gölgeli Indigo Mavisi Jean Pantolon",
+    "url": "https://www.mavi.com/miami-iconic-golgeli-indigo-mavisi-jean-pantolon/p/1010727-88210?#ins_sr=eyJwcm9kdWN0SWQiOiIxMDEwNzI3LTg4MjEwIn0=",
+    "img": "https://sky-static.mavi.com/mnresize/820/1162/1010727-88210_image_1.jpg",
+    "price": 1499.99
+  },
+  {
+    "id": 3,
+    "name": "Siena Iconic Gölgeli Açık Mavi Jean Pantolon",
+    "url": "https://www.mavi.com/siena-iconic-golgeli-acik-mavi-jean-pantolon/p/1010763-89104?#ins_sr=eyJwcm9kdWN0SWQiOiIxMDEwNzYzLTg5MTA0In0=",
+    "img": "https://sky-static.mavi.com/mnresize/820/1162/1010763-89104_image_1.jpg",
+    "price": 1499.99
+  },
+  {
+    "id": 4,
+    "name": "Jane Classic Denim Puslu Açık Mavi Jean Pantolon",
+    "url": "https://www.mavi.com/jane-classic-denim-puslu-acik-mavi-jean-pantolon/p/1010917-89059?#ins_sr=eyJwcm9kdWN0SWQiOiIxMDEwOTE3LTg5MDU5In0=",
+    "img": "https://sky-static.mavi.com/mnresize/820/1162/1010917-89059_image_1.jpg",
+    "price": 1299.99
+  },
+  {
+    "id": 5,
+    "name": "Lisa 90lar Tokalı İndigo Mavisi Jean Pantolon",
+    "url": "https://www.mavi.com/lisa-90lar-tokali-indigo-mavisi-jean-pantolon/p/1010938-89253?#ins_sr=eyJwcm9kdWN0SWQiOiIxMDEwOTM4LTg5MjUzIn0=",
+    "img": "https://sky-static.mavi.com/mnresize/820/1162/1010938-89253_image_1.jpg",
+    "price": 1499.99
+  },
+  {
+    "id": 6,
+    "name": "Ada M Girly Beyaz Jean Pantolon",
+    "url": "https://www.mavi.com/ada-m-girly-beyaz-jean-pantolon/p/1020581363?#ins_sr=eyJwcm9kdWN0SWQiOiIxMDIwNTgxMzYzIn0=",
+    "img": "https://sky-static.mavi.com/mnresize/820/1162/1020581363_image_1.jpg",
+    "price": 1299.99
+  },
+  {
+    "id": 7,
+    "name": "Ada Casual Indigo Mavisi Jean Pantolon",
+    "url": "https://www.mavi.com/ada-casual-indigo-mavisi-jean-pantolon/p/1020588192?#ins_sr=eyJwcm9kdWN0SWQiOiIxMDIwNTg4MTkyIn0=",
+    "img": "https://sky-static.mavi.com/mnresize/820/1162/1020588192_image_1.jpg",
+    "price": 749.99
+  },
+  {
+    "id": 8,
+    "name": "Bej Crop Trençkot",
+    "url": "https://www.mavi.com/bej-crop-trenckot/p/1110376-70134?#ins_sr=eyJwcm9kdWN0SWQiOiIxMTEwMzc2LTcwMTM0In0=",
+    "img": "https://sky-static.mavi.com/mnresize/820/1162/1110376-70134_image_1.jpg",
+    "price": 2299.99
+  },
+  {
+    "id": 9,
+    "name": "Yaka Detaylı Haki Ceket",
+    "url": "https://www.mavi.com/yaka-detayli-haki-ceket/p/1110621-70204?#ins_sr=eyJwcm9kdWN0SWQiOiIxMTEwNjIxLTcwMjA0In0=",
+    "img": "https://sky-static.mavi.com/mnresize/820/1162/1110621-70204_image_1.jpg",
+    "price": 2799.99
+  },
+  {
+    "id": 10,
+    "name": "Lux Touch TENCEL TM Çizgili Mavi Modal Gömlek",
+    "url": "https://www.mavi.com/lux-touch-tencel-tm-cizgili-mavi-modal-gomlek/p/1210339-83927?#ins_sr=eyJwcm9kdWN0SWQiOiIxMjEwMzM5LTgzOTI3In0=",
+    "img": "https://sky-static.mavi.com/mnresize/820/1162/1210339-83927_image_1.jpg",
+    "price": 1499.99
+  }
+]
