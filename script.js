@@ -5,9 +5,69 @@
   };
 
   self.buildCSS = () => {
+    const css2 = `
+    .main-wrapper {
+      position: relative;
+      overflow: hidden;
+      height: 410px;
+      direction: ltr !important;
+    }
+    .wrapper-header {
+      font-size: 16px;
+      color: #000000;
+      margin: 20px 0;
+    }
+    .wrapper-body {
+      width: 1319px;
+    }
+    ul {
+      transform: translateX(0px);
+      width: 2762.5px;
+      margin-left: 0;
+      overflow: hidden;
+      display: inline-block !important;
+      padding: 0 !important;
+      transition: 700ms transform;
+    }
+    .box-item {
+    
+    }
+    li {
+      background: #ffffff;
+      border: 0px none #000000;
+      border-radius: 0px;
+      margin: 3px;
+    }
+    .arrow-element {
+    display: block !important;
+    position: absolute;
+    padding: 12px !important;
+    border-radius: 100% !important;
+    background-color: #fff;
+    box-shadow: 0 0 1px #28293d0a, 0 0.5px 2px #60617029;
+    width: 35px;
+    height: 35px;
+    }
+    .arrow-element-prev {
+      transform: translateY(-50%) rotate(180deg);
+      left: 14px;
+      background: transparent;
+      cursor: pointer;
+      top: 50%;
+      z-index: 3;
+    }
+    .arrow-element-next {
+      transform: translateY(-50%) rotate(0deg);
+      right: 14px;
+      background: transparent;
+      cursor: pointer;
+      top: 50%;
+      z-index: 3;
+    }
+    `;
     const css = `
       .wrapper {
-        width: 1570px;
+        width: 100%;
         background-color: #faf9f7;
         margin: 0 auto;
         padding: 10px;
@@ -32,29 +92,14 @@
         background-color: #fff;
       }
       .product-header {
-        font-size: 32px;
+        font-size: 16px;
         line-height: 43px;
-        padding: 15px 0;
+        margin: 20px 0;
       }
       .product-image{
-        width: 210px;
-        height: 280px;
+        width: 399px;
+        height: 599px;
         margin: 10px;
-      }
-      .product-hearth-icon{
-        cursor: pointer;
-        position: absolute;
-        top: 9px;
-        right: 15px;
-        width: 34px;
-        height: 34px;
-        background-color: #fff;
-        border-radius: 5px;
-        box-shadow: 0 3px 6px 0 rgba(0, 0, 0, .16);
-        border: solid .5px #b6b7b9;
-        display: flex;
-        justify-content: center;
-        align-items: center;
       }
       .product-name{
         font-size: 12px;
@@ -65,7 +110,7 @@
       }
       .product-price{
         font-size: 16px;
-        color: #193db0;
+        color: #000000;
         margin: 0 auto;
         width: 90%;
         font-weight: bold;
@@ -153,8 +198,13 @@
     if (productData) {
       try {
         const parsedData = JSON.parse(productData);
-        self.buildHTML(parsedData);
-        self.likeProduct();
+        if (parsedData) {
+          // Eğer veriler başarıyla parse edildiyse, sadece buildHTML çalıştır
+          self.buildHTML(parsedData);
+        } else {
+          console.warn("Geçersiz veri bulundu, yeniden veri çekilecek.");
+          fetchAndUseProductData(); // Verinin içeriği geçersizse veriyi tekrar çek
+        }
       } catch (e) {
         console.warn(
           "localStorage'daki veri parse edilemedi, yeniden fetch ediliyor."
@@ -162,7 +212,7 @@
         fetchAndUseProductData();
       }
     } else {
-      fetchAndUseProductData();
+      fetchAndUseProductData(); // Eğer localStorage'da veri yoksa veriyi çek
     }
 
     function fetchAndUseProductData() {
@@ -186,7 +236,7 @@
             <img class="product-image" src="${item.img}"></img>
           </a>
             <div class="product-name">${item.name}</div>
-            <div class="product-price">${item.price} TRY</div>
+            <div class="product-price">${item.price} TL</div>
           </li>`;
       })
       .join("");
@@ -203,7 +253,7 @@
 
     `;
 
-    $(".product-detail").append(carouselHtml);
+    $(".product").append(carouselHtml);
 
     self.slider();
   };
@@ -229,5 +279,3 @@
   // return self.init();
   self.init();
 })();
-
-// container-mavi container-mavi--m-none altına eklenecek
