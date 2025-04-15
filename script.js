@@ -241,6 +241,15 @@
       })
       .join("");
 
+    const carouselHtml2 = `
+    <div class="main-wrapper">
+    <div class="wrapper-header"></div>
+    <div class="wrapper_body">
+      <ul class=""><ul>
+    </div>
+    </div>
+    `;
+
     const carouselHtml = `
       <div class="wrapper">
         <p class="product-header">Birlikte Tercih Edilenler</p>
