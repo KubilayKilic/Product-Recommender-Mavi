@@ -5,165 +5,94 @@
   };
 
   self.buildCSS = () => {
-    const css2 = `
-    .main-wrapper {
-      position: relative;
-      overflow: hidden;
-      height: 410px;
-      direction: ltr !important;
-    }
-    .wrapper-header {
-      font-size: 16px;
-      color: #000000;
-      margin: 20px 0;
-    }
-    .wrapper-body {
-      width: 1319px;
-    }
-    ul {
-      transform: translateX(0px);
-      width: 2762.5px;
-      margin-left: 0;
-      overflow: hidden;
-      display: inline-block !important;
-      padding: 0 !important;
-      transition: 700ms transform;
-    }
-    .box-item {
-    
-    }
-    li {
-      background: #ffffff;
-      border: 0px none #000000;
-      border-radius: 0px;
-      margin: 3px;
-    }
-    .arrow-element {
-    display: block !important;
-    position: absolute;
-    padding: 12px !important;
-    border-radius: 100% !important;
-    background-color: #fff;
-    box-shadow: 0 0 1px #28293d0a, 0 0.5px 2px #60617029;
-    width: 35px;
-    height: 35px;
-    }
-    .arrow-element-prev {
-      transform: translateY(-50%) rotate(180deg);
-      left: 14px;
-      background: transparent;
-      cursor: pointer;
-      top: 50%;
-      z-index: 3;
-    }
-    .arrow-element-next {
-      transform: translateY(-50%) rotate(0deg);
-      right: 14px;
-      background: transparent;
-      cursor: pointer;
-      top: 50%;
-      z-index: 3;
-    }
-    `;
     const css = `
-      .wrapper {
-        width: 100%;
-        background-color: #faf9f7;
-        margin: 0 auto;
-        padding: 10px;
-        position: relative;
-      }
-      .product-wrapper{
-        width: 100%;
-        height: 100%;
-        display: flex;
-        gap: 10px;
-        flex-direction: row;
-        overflow-x: scroll;
-        padding: 0px !important;
-        scroll-behavior: smooth;
-        margin: auto;
-      }
-      .product-wrapper::-webkit-scrollbar {
-        display: none;
-      }
-      .product{
-        position: relative;
-        background-color: #fff;
-      }
-      .product-header {
-        font-size: 16px;
-        line-height: 43px;
-        margin: 20px 0;
-      }
-      .product-image{
-        width: 399px;
-        height: 599px;
-        margin: 10px;
-      }
-      .product-name{
-        font-size: 12px;
-        color: black;
-        margin: 0 auto;
-        width: 90%;
-        height: 50px;
-      }
-      .product-price{
-        font-size: 16px;
-        color: #000000;
-        margin: 0 auto;
-        width: 90%;
-        font-weight: bold;
-      }
-      ul {
-        list-style: none!important;
-      }
-      .prev-btn, .next-btn {
-        border: none;
-        background-color: transparent;
-        font-weight: bold;
-        width: 40px;
-        font-size: 30px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0% #fff 100%);
-        cursor: pointer;
-        z-index: 9;
-        margin: 15px;
-        position: absolute;
-        top: 43%;
-      }
-      .prev-btn {
-        left: -70px;
-      }
-      .next-btn {
-        right: -70px;
-      }
-      @media only screen and (max-width: 1750px) {
-        .wrapper {
-          width: 1450px;
-        }
-      }
-      @media only screen and (max-width: 1600px) {
-        .wrapper {
-          width: 1300px;
-        }
-      }
-      @media only screen and (max-width: 1440px) {
-        .wrapper {
-          width: 1100px;
-        }
-      }
-      @media only screen and (max-width: 1366px) {
-        .wrapper {
-          width: auto;
-        }
-        .prev-btn, .next-btn {
-          display: none;
-        }
-      }
-      }
+
+    .main-wrapper {
+  display: block;
+  position: relative;
+  margin-right: 55px !important;
+  margin-left: 55px !important;
+  box-sizing: border-box;
+}
+.wrapper-header {
+  font-size: 20px;
+  font-weight: 500;
+  color: #000000;
+  margin: 20px 0;
+}
+.product {
+  flex: 0 0 auto;
+  width: 400px; /* kart genişliği */
+  margin-right: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+}
+.product-wrapper {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding-bottom: 10px;
+}
+.product-image {
+  width: 100%;
+  height: auto;
+  margin: 5px 0;
+  object-fit: cover;
+}
+.product-name,
+.product-price {
+  text-align: center;
+  font-size: 14px;
+}
+.product-name {
+  margin-top: 8px;
+  font-weight: 500;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.product-price {
+  color: #333;
+  font-weight: bold;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.arrow-element-prev {
+  display: block !important;
+  position: absolute;
+  cursor: pointer;
+  top: 50%;
+  left: -5px;
+  padding: 12px !important;
+  border-radius: 100% !important;
+  background-color: #fff;
+  box-shadow: 0 0 1px #28293d0a, 0 0.5px 2px #60617029;
+  width: 22px;
+  height: 22px;
+  font-weight: bolder;
+  background-image: url(https://www.svgrepo.com/show/522366/chevron-left.svg);
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+.arrow-element-next {
+  display: block !important;
+  position: absolute;
+  cursor: pointer;
+  top: 50%;
+  right: -35px;
+  padding: 12px !important;
+  border-radius: 100% !important;
+  background-color: #fff;
+  box-shadow: 0 0 1px #28293d0a, 0 0.5px 2px #60617029;
+  width: 22px;
+  height: 22px;
+  font-weight: bolder;
+  background-image: url(https://www.svgrepo.com/show/522374/chevron-right.svg);
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+ 
   `;
 
     $("<style>").addClass("carousel-style").html(css).appendTo("head");
@@ -241,28 +170,19 @@
       })
       .join("");
 
-    const carouselHtml2 = `
-    <div class="main-wrapper">
-    <div class="wrapper-header"></div>
-    <div class="wrapper_body">
-      <ul class=""><ul>
-    </div>
-    </div>
-    `;
-
     const carouselHtml = `
-      <div class="wrapper">
-        <p class="product-header">Birlikte Tercih Edilenler</p>
-        <button class="prev-btn"><</button>
+      <div class="main-wrapper">
+        <p class="wrapper-header">Birlikte Tercih Edilenler</p>
+        <button class="arrow-element-prev"></button>
         <ul class="product-wrapper">
           ${carouselData}
         </ul>
-        <button class="next-btn">></button>
+        <button class="arrow-element-next"></button>
       </div>
 
     `;
 
-    $(".product").append(carouselHtml);
+    $("footer").prepend(carouselHtml);
 
     self.slider();
   };

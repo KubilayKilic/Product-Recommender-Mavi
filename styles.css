@@ -1,0 +1,85 @@
+.main-wrapper {
+  display: block;
+  position: relative;
+  margin-right: 55px !important;
+  margin-left: 55px !important;
+  box-sizing: border-box;
+}
+.wrapper-header {
+  font-size: 20px;
+  font-weight: 500;
+  color: #000000;
+  margin: 20px 0;
+}
+.product {
+  flex: 0 0 auto;
+  width: 400px; /* kart genişliği */
+  margin-right: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+}
+.product-wrapper {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding-bottom: 10px;
+}
+.product-image {
+  width: 100%;
+  height: auto;
+  margin: 5px 0;
+  object-fit: cover;
+}
+.product-name,
+.product-price {
+  text-align: center;
+  font-size: 14px;
+}
+.product-name {
+  margin-top: 8px;
+  font-weight: 500;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.product-price {
+  color: #333;
+  font-weight: bold;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.arrow-element-prev {
+  display: block !important;
+  position: absolute;
+  cursor: pointer;
+  top: 50%;
+  left: -5px;
+  padding: 12px !important;
+  border-radius: 100% !important;
+  background-color: #fff;
+  box-shadow: 0 0 1px #28293d0a, 0 0.5px 2px #60617029;
+  width: 22px;
+  height: 22px;
+  font-weight: bolder;
+  background-image: url(https://www.svgrepo.com/show/522366/chevron-left.svg);
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+.arrow-element-next {
+  display: block !important;
+  position: absolute;
+  cursor: pointer;
+  top: 50%;
+  right: -35px;
+  padding: 12px !important;
+  border-radius: 100% !important;
+  background-color: #fff;
+  box-shadow: 0 0 1px #28293d0a, 0 0.5px 2px #60617029;
+  width: 22px;
+  height: 22px;
+  font-weight: bolder;
+  background-image: url(https://www.svgrepo.com/show/522374/chevron-right.svg);
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
