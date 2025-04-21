@@ -6,7 +6,6 @@
 
   self.buildCSS = () => {
     const css = `
-
     .main-wrapper {
   display: block;
   position: relative;
@@ -23,7 +22,7 @@
 .product {
   flex: 0 0 auto;
   width: 400px; /* kart genişliği */
-  margin-right: 16px;
+  margin-right: 8px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -33,7 +32,7 @@
   margin: 0 auto;
   display: flex;
   flex-direction: row;
-  overflow-x: auto;
+  overflow-x: hidden;
   scroll-behavior: smooth;
   padding-bottom: 10px;
 }
@@ -59,11 +58,10 @@
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 .arrow-element-prev {
-  display: block !important;
   position: absolute;
   cursor: pointer;
   top: 50%;
-  left: -5px;
+  left: 2%;
   padding: 12px !important;
   border-radius: 100% !important;
   background-color: #fff;
@@ -80,7 +78,7 @@
   position: absolute;
   cursor: pointer;
   top: 50%;
-  right: -35px;
+  right: 2%;
   padding: 12px !important;
   border-radius: 100% !important;
   background-color: #fff;
@@ -92,7 +90,7 @@
   background-size: 100%;
   background-repeat: no-repeat;
 }
- 
+
   `;
 
     $("<style>").addClass("carousel-style").html(css).appendTo("head");
@@ -189,12 +187,12 @@
 
   self.slider = () => {
     const productWrapper = $(".product-wrapper");
-    const prevBtn = $(".prev-btn");
-    const nextBtn = $(".next-btn");
+    const prevBtn = $(".arrow-element-prev");
+    const nextBtn = $(".arrow-element-next");
 
     //debugger;
     productWrapper.each((index, item) => {
-      let productWidth = 230;
+      let productWidth = 400;
 
       $(nextBtn[index]).on("click", () => {
         item.scrollLeft += productWidth;
